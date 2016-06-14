@@ -61,6 +61,9 @@ fi
 if [ -f app.fsx ]; then
   echo "-----> Compiling app.fsx"
   mono /app/mono/lib/mono/4.5/fsc.exe app.fsx
+elif [ -f build.sh ]; then
+    echo "-----> Running build.sh"
+    build.sh
 elif [ -f *.sln ]; then
    echo "-----> Compiling application"
    mono $XBUILD
