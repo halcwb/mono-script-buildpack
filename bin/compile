@@ -44,7 +44,6 @@ export LD_LIBRARY_PATH="/app/mono/lib:$LD_LIBRARY_PATH"
 # mono $MOZROOT --sync --import
 # cp -r ~/.config ${BUILD_DIR}/.
 cd ${BUILD_DIR}
-ls -a
 
 if [ -f paket.lock ]; then
   echo "-----> paket.lock found, restoring packages with paket"
@@ -59,6 +58,7 @@ if [ -f packages.config -o -f */packages.config ]; then
    find  -name packages.config | xargs mono $NUGET install -o packages
 fi
 
+echo "-----> Starting build"
 if [ -f build.sh ]; then
    echo "-----> Running build.sh"
    ./build.sh build
@@ -67,5 +67,6 @@ elif [ -f *.sln ]; then
    mono $XBUILD
 fi
 
+echo "-----> Finishing compile"
 mkdir -p ${BUILD_DIR}/.profile.d
 cp -n ${LP_DIR}/.profile.d/* ${BUILD_DIR}/.profile.d/
