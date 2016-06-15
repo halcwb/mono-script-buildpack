@@ -40,7 +40,7 @@ cp -p /app/mono/bin/fsharpi /app/mono/bin/fsharpi-heroku
 echo "-----> Setting envvars"
 export PATH="/app/mono/bin:$PATH"
 export LD_LIBRARY_PATH="/app/mono/lib:$LD_LIBRARY_PATH"
-echo "-----> Importing trusted root certificates"
+# echo "-----> Importing trusted root certificates"
 # mono $MOZROOT --sync --import
 # cp -r ~/.config ${BUILD_DIR}/.
 cd ${BUILD_DIR}
@@ -60,7 +60,7 @@ fi
 
 if [ -f build.sh ]; then
    echo "-----> Running build.sh"
-   build.sh
+   ./build.sh build
 elif [ -f *.sln ]; then
    echo "-----> Compiling application"
    mono $XBUILD
