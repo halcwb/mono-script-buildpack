@@ -44,6 +44,7 @@ export LD_LIBRARY_PATH="/app/mono/lib:$LD_LIBRARY_PATH"
 # mono $MOZROOT --sync --import
 # cp -r ~/.config ${BUILD_DIR}/.
 cd ${BUILD_DIR}
+ls -a
 
 if [ -f paket.lock ]; then
   echo "-----> paket.lock found, restoring packages with paket"
