@@ -8,7 +8,7 @@ LP_DIR=`cd $(dirname $0); cd ..; pwd`
 # fail fast
 set -e
 
-MONO3_VM_BINARY="https://github.com/friism/mono-builder/releases/download/v4.2.0.207/mono-4.2.0.207.tar.gz"
+MONO3_VM_BINARY="https://github.com/adamburgess/heroku-buildpack-mono/releases/download/ca606bbefa24/mono-minimal.tar.xz"
 NUGET_BINARY="https://nuget.org/nuget.exe"
 PAKET_BINARY="https://github.com/fsprojects/Paket/releases/download/2.40.9/paket.exe"
 
